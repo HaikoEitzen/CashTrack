@@ -20,7 +20,11 @@
 package CashTrackClasses;
 
 /**
- *
+ * Class used to indicate if a transaction is an income or output.
+ * 
+ * He who is faithful in a very little thing is faithful also in much.
+ * Luke 16:10
+ * 
  * @author Haiko
  */
 public enum InOrOut {
