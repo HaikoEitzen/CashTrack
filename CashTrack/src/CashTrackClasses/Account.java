@@ -37,9 +37,26 @@ public class Account {
     private String name;
     private Double balance;
     private ArrayList<Transaction> movement;
+    /**
+     * If true, there exists an account from which to automatically pull money
+     * whenever there's an income into this account.
+     */
     private Boolean autoPull;
+    /**
+     * Specifies the account from which to pull money, as explained above.
+     */
     private Account autoPullFrom;
+    /**
+     * If true, there exists an account to which money must automatically be
+     * pushed into whenever some is taken out of this account.
+     */
     private Boolean autoPush;
+    /**
+     * Specifies the account into which to push money, as explained above.
+     * An example implementation would be to have an account Bank and an account
+     * Cash, and whenever money is taken from the Bank it is automatically
+     * pushed into Cash.
+     */
     private Account autoPushInto;
     private final GregorianCalendar creation;
     
@@ -58,6 +75,13 @@ public class Account {
         this.autoPush = false;
         this.creation = new GregorianCalendar();
         
+    }
+    
+    /**
+     * Reinitializes the movement array.
+     */
+    public void clearTransactions() {
+        movement = new ArrayList<>();
     }
     
     public Integer getId() {
