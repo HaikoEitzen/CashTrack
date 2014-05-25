@@ -39,6 +39,14 @@ public class Transaction {
     private final String detail;
     private final GregorianCalendar date;
     
+    /**
+     * Only and necessary constructor.
+     * @param id
+     * @param account
+     * @param inorout
+     * @param amount
+     * @param detail 
+     */
     public Transaction (Integer id, Account account, InOrOut inorout, 
             Double amount, String detail) {
         this.id = id;
