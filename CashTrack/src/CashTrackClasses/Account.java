@@ -84,6 +84,41 @@ public class Account {
         movement = new ArrayList<>();
     }
     
+    /**
+     * sets balance to zero.
+     */
+    public void clearBalance() {
+        balance = 0.0;
+    }
+    
+    /**
+     * clears account data, except for id and name.
+     */
+    public void clearAccount() {
+        clearTransactions();
+        clearBalance();
+        setAutoPull(false);
+        setAutoPush(false);
+    }
+    
+    /**
+     * set the automatic pull.
+     * @param autoPullFrom 
+     */
+    public void pullFrom(Account autoPullFrom) {
+        setAutoPull(true);
+        setAutoPullFrom(autoPullFrom);
+    }
+    
+    /**
+     * set the automatic push.
+     * @param autoPushInto 
+     */
+    public void pushInto(Account autoPushInto) {
+        setAutoPush(true);
+        setAutoPushInto(autoPushInto);
+    }
+    
     public Integer getId() {
         return this.id;
     }
